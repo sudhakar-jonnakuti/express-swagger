@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  express-swagger:
+    build:
+      context: .
+      dockerfile: swagger.dockerfile
+    image: express-swagger
+    container_name: express-swagger
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/home/node/express-swagger
+      - node_modules:/home/node/express-swagger/node_modules
+    networks:
+      - app-network
+    command: npm run start
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node_modules:
