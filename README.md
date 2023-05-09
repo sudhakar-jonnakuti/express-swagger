@@ -1,9 +1,11 @@
-# express-swagger
+```
+health : http://localhost:5000/health
+swagger : http://localhost:5000/openapi
+swagger json : http://localhost:5000/openapi/json
 
-Local:
-At local system: npm start
-At local system restarts target node process when any of required files changes: npm start:dev
+command : local: npm start or npm start:dev
+command : docker up : docker-compose -f swagger.docker-compose.yml up -d
+command : docker down : docker-compose -f swagger.docker-compose.yml down -v --rmi all
 
-Docker:
-docker-compose -f swagger.docker-compose.yml up -d
-docker-compose -f swagger.docker-compose.yml down -v --rmi all
+```
+
